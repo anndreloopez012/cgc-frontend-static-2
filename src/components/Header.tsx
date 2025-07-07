@@ -78,15 +78,12 @@ const Header: React.FC<HeaderProps> = ({ showSidebarButton = false, onSidebarBut
               <div className="flex-shrink-0">
                 <div className="flex items-center">
                   <div className="relative">
-                    {/* Logo principal estilo gobierno */}
-                    <div className="w-14 h-14 bg-white rounded-full shadow-lg flex items-center justify-center">
-                      <span className="text-primary font-bold text-xl">CGC</span>
-                    </div>
-                  </div>
-                  {/* Texto del logo */}
-                  <div className="ml-4 hidden sm:block">
-                    <span className="text-xl sm:text-2xl font-bold text-white tracking-wide">Contraloría General de Cuentas</span>
-                    <div className="text-sm text-white/80 font-medium">Guatemala</div>
+                    {/* Logo principal con imagen */}
+                    <img 
+                      src="/lovable-uploads/be6267fe-c26a-4dd8-bdc3-95323c6a0fd7.png" 
+                      alt="CGC Logo" 
+                      className="h-16 w-auto object-contain"
+                    />
                   </div>
                 </div>
               </div>
