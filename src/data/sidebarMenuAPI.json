@@ -12,8 +12,8 @@
         "route": "/estado-cuenta",
         "icon": "FileText",
         "description": "Consulta el estado de tu cuenta y movimientos",
-        "color": "text-blue-600",
-        "bgColor": "bg-blue-50 hover:bg-blue-100",
+        "color": "text-slate-700",
+        "bgColor": "bg-slate-50 hover:bg-slate-100 border-slate-200",
         "priority": 1,
         "active": true
       },
@@ -23,8 +23,8 @@
         "route": "/solicitud-finiquito",
         "icon": "FileText",
         "description": "Realiza tu solicitud de finiquito en línea",
-        "color": "text-green-600",
-        "bgColor": "bg-green-50 hover:bg-green-100",
+        "color": "text-slate-700",
+        "bgColor": "bg-slate-50 hover:bg-slate-100 border-slate-200",
         "priority": 2,
         "active": true
       },
@@ -34,8 +34,8 @@
         "route": "/comunicaciones-electronicas",
         "icon": "Mail",
         "description": "Gestiona tus comunicaciones electrónicas",
-        "color": "text-purple-600",
-        "bgColor": "bg-purple-50 hover:bg-purple-100",
+        "color": "text-slate-700",
+        "bgColor": "bg-slate-50 hover:bg-slate-100 border-slate-200",
         "priority": 3,
         "active": true
       },
@@ -45,8 +45,8 @@
         "route": "/registro-titulos",
         "icon": "Book",
         "description": "Registra y consulta títulos académicos",
-        "color": "text-orange-600",
-        "bgColor": "bg-orange-50 hover:bg-orange-100",
+        "color": "text-slate-700",
+        "bgColor": "bg-slate-50 hover:bg-slate-100 border-slate-200",
         "priority": 4,
         "active": true
       },
@@ -56,8 +56,8 @@
         "route": "/actualizacion-datos",
         "icon": "RefreshCcw",
         "description": "Actualiza tu información personal",
-        "color": "text-indigo-600",
-        "bgColor": "bg-indigo-50 hover:bg-indigo-100",
+        "color": "text-slate-700",
+        "bgColor": "bg-slate-50 hover:bg-slate-100 border-slate-200",
         "priority": 5,
         "active": true
       },
@@ -67,8 +67,8 @@
         "route": "/declaracion-patrimonial",
         "icon": "FileText",
         "description": "Presenta tu declaración jurada patrimonial",
-        "color": "text-teal-600",
-        "bgColor": "bg-teal-50 hover:bg-teal-100",
+        "color": "text-slate-700",
+        "bgColor": "bg-slate-50 hover:bg-slate-100 border-slate-200",
         "priority": 6,
         "active": true
       },
@@ -78,8 +78,8 @@
         "route": "/manuales-procedimientos",
         "icon": "Book",
         "description": "Consulta manuales y procedimientos en PDF",
-        "color": "text-red-600",
-        "bgColor": "bg-red-50 hover:bg-red-100",
+        "color": "text-slate-700",
+        "bgColor": "bg-slate-50 hover:bg-slate-100 border-slate-200",
         "priority": 7,
         "active": true
       }

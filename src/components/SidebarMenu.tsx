@@ -243,7 +243,7 @@ const SidebarMenu = () => {
               key={item.id}
               variant="ghost"
               className={`w-full justify-start text-left p-3 h-auto ${item.bgColor} 
-                transition-all duration-300 hover:shadow-md border hover:border-primary/30
+                transition-all duration-300 hover:shadow-md border 
                 ${isTransitioning ? 'opacity-50 pointer-events-none' : ''}
                 animate-fade-in-up relative overflow-hidden`}
               style={{ animationDelay: `${index * 100}ms` }}
