@@ -346,40 +346,34 @@ const MenuPage = () => {
   // ==================== FUNCIONES DE RENDERIZADO ====================
 
   /**
-   * Renderiza tarjetas de contenido PDF con diseño mejorado
-   * Incluye imagen grande y centrada con animaciones
+   * Renderiza tarjetas de contenido PDF con diseño formal gubernamental
+   * Diseño sobrio sin esquinas redondeadas
    */
   const renderPDFContent = (item: ContentItem) => (
-    <div className="bg-white/70 backdrop-blur-lg rounded-2xl shadow-lg border border-gray-200/50 hover:shadow-xl transition-all duration-300 hover:scale-[1.02] animate-fade-in h-full overflow-hidden">
-      {/* Imagen principal grande y centrada con animación mejorada */}
+    <div className="bg-white border border-gray-300 shadow-sm hover:shadow-md transition-all duration-200 animate-fade-in h-full overflow-hidden">
+      {/* Imagen principal formal */}
       {item.thumbnail && (
-        <div className="relative h-64 w-full overflow-hidden group">
+        <div className="relative h-48 w-full overflow-hidden group">
           <img
             src={item.thumbnail}
             alt={item.title}
-            className="w-full h-full object-cover transition-all duration-700 group-hover:scale-110 animate-fade-in filter group-hover:brightness-110"
+            className="w-full h-full object-cover transition-all duration-300 group-hover:brightness-105"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-60 group-hover:opacity-80 transition-all duration-500"></div>
+          <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
           
-          <div className="absolute top-4 left-4 transform group-hover:scale-110 transition-transform duration-300">
-            <span className="px-3 py-1 bg-blue-600 text-white text-xs font-medium rounded-full shadow-lg animate-scale-in backdrop-blur-sm">
+          <div className="absolute top-3 left-3">
+            <span className="px-2 py-1 bg-gray-800 text-white text-xs font-medium">
               {item.subtype || 'PDF'}
             </span>
           </div>
           
           {item.size && (
-            <div className="absolute top-4 right-4 transform group-hover:scale-110 transition-transform duration-300">
-              <span className="px-2 py-1 bg-white/90 text-gray-700 text-xs rounded-full shadow-sm backdrop-blur-sm">
+            <div className="absolute top-3 right-3">
+              <span className="px-2 py-1 bg-white text-gray-700 text-xs">
                 {item.size}
               </span>
             </div>
           )}
-          
-          <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-500 transform group-hover:scale-105">
-            {/* Removed buttons "Ver" and "Descargar" from center */}
-          </div>
-          
-          <div className="absolute inset-0 opacity-0 group-hover:opacity-20 transition-opacity duration-500 bg-gradient-to-r from-transparent via-white to-transparent transform -skew-x-12 translate-x-full group-hover:translate-x-[-200px] transition-transform duration-1000"></div>
         </div>
       )}
 
@@ -394,7 +388,7 @@ const MenuPage = () => {
         </div>
 
         <div className="flex items-center justify-between text-xs text-gray-500 mb-4">
-          <span className="px-2 py-1 bg-blue-100 text-blue-700 rounded-full font-medium">
+          <span className="px-2 py-1 bg-gray-100 text-gray-700 font-medium">
             {item.category}
           </span>
           {item.downloadCount && (
@@ -413,7 +407,7 @@ const MenuPage = () => {
       <div className="px-6 pb-6 flex gap-3">
         <Button
           onClick={() => handleViewPDF(item)}
-          className="flex-1 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 transition-all duration-300 shadow-lg hover:shadow-xl"
+          className="flex-1 bg-gray-800 hover:bg-gray-900 text-white transition-colors duration-200"
           size="sm"
         >
           <Eye className="w-4 h-4 mr-2" />
@@ -423,7 +417,7 @@ const MenuPage = () => {
           variant="outline"
           onClick={() => handleDownloadPDF(item)}
           size="sm"
-          className="hover:bg-green-50 hover:border-green-300 transition-all duration-300 shadow-sm hover:shadow-md"
+          className="border-gray-300 hover:bg-gray-50 transition-colors duration-200"
         >
           <Download className="w-4 h-4" />
         </Button>
@@ -441,7 +435,7 @@ const MenuPage = () => {
     if (!item.images || item.images.length === 0) return null;
 
     return (
-      <div className="bg-white/70 backdrop-blur-lg rounded-2xl shadow-lg border border-gray-200/50 hover:shadow-xl transition-all duration-300 animate-fade-in-up h-full">
+      <div className="bg-white border border-gray-300 shadow-sm hover:shadow-md transition-all duration-200 animate-fade-in-up h-full">
         <div className="p-6 border-b border-gray-100">
           <h3 className="text-lg font-semibold text-gray-900 mb-2">
             {item.title}
