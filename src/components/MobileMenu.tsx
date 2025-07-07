@@ -104,7 +104,7 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose }) => {
               return (
                 <button
                   key={index}
-                  className={`${social.color} text-white p-3 transition-all duration-200 hover:opacity-90 flex items-center justify-center space-x-2`}
+                  className="bg-gray-600 text-white p-3 transition-all duration-200 hover:bg-gray-700 flex items-center justify-center space-x-2"
                 >
                   <IconComponent />
                   <span className="text-sm font-medium">{social.name}</span>
@@ -153,7 +153,7 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose }) => {
               <button
                 key={item.key}
                 onClick={() => navigateToLevel(item.key, item.title)}
-                className={`flex items-center w-full text-left py-3 px-4 font-medium transition-all duration-200 hover:bg-gray-100 ${item.iconColor}`}
+                className="flex items-center w-full text-left py-3 px-4 font-medium transition-all duration-200 hover:bg-gray-100 text-gray-700 hover:text-gray-900"
               >
                 {IconComponent && <IconComponent className="w-5 h-5 mr-3" />}
                 <span className="flex-1">{item.title}</span>
@@ -210,7 +210,7 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose }) => {
                       {IconComponent && <IconComponent className="w-5 h-5 mr-3" />}
                       <span className="flex-1">{item.title}</span>
                       {item.images && (
-                        <span className="text-xs bg-blue-100 text-blue-600 px-2 py-1 rounded-full ml-2">
+                        <span className="text-xs bg-gray-100 text-gray-600 px-2 py-1 ml-2">
                           {item.images.length} img
                         </span>
                       )}
@@ -289,10 +289,11 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose }) => {
           <div className="p-4 border-b border-gray-300">
             <div className="flex items-center justify-between">
               <div className="flex items-center">
-                <div className="w-8 h-8 bg-gray-800 flex items-center justify-center">
-                  <span className="text-white font-bold text-sm">C</span>
-                </div>
-                <span className="ml-2 font-bold text-gray-900">CGC</span>
+                <img 
+                  src="/lovable-uploads/be6267fe-c26a-4dd8-bdc3-95323c6a0fd7.png" 
+                  alt="CGC Logo" 
+                  className="h-8 w-auto object-contain"
+                />
               </div>
               <button
                 onClick={closeMenu}
