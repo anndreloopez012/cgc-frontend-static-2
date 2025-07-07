@@ -379,7 +379,7 @@ const MenuPage = () => {
 
       <div className="p-6">
         <div className="mb-4">
-          <h3 className="text-lg font-semibold text-gray-900 mb-2 line-clamp-2 group-hover:text-blue-600 transition-colors duration-300">
+          <h3 className="text-lg font-semibold text-gray-900 mb-2 line-clamp-2 group-hover:text-gray-700 transition-colors duration-200">
             {item.title}
           </h3>
           <p className="text-sm text-gray-600 line-clamp-3 leading-relaxed">
@@ -518,7 +518,7 @@ const MenuPage = () => {
 
         <div className="p-6">
           <div className="flex items-center justify-between text-xs text-gray-500">
-            <span className="px-2 py-1 bg-purple-100 text-purple-700 rounded-full font-medium">
+            <span className="px-2 py-1 bg-gray-100 text-gray-700 font-medium">
               {item.category}
             </span>
             <span>Actualizado: {item.lastUpdated}</span>
@@ -757,7 +757,7 @@ const MenuPage = () => {
 
         <div className="p-6">
           <div className="flex items-center justify-between text-xs text-gray-500">
-            <span className="px-2 py-1 bg-red-100 text-red-700 rounded-full font-medium">
+            <span className="px-2 py-1 bg-gray-100 text-gray-700 font-medium">
               {item.category}
             </span>
             <span>Actualizado: {item.lastUpdated}</span>
@@ -864,7 +864,7 @@ const MenuPage = () => {
 
       <div className="px-6 pb-6">
         <div className="flex items-center justify-between text-xs text-gray-500">
-          <span className="px-2 py-1 bg-green-100 text-green-700 rounded-full font-medium">
+          <span className="px-2 py-1 bg-gray-100 text-gray-700 font-medium">
             {item.category}
           </span>
           <span>Actualizado: {item.lastUpdated}</span>
@@ -1021,7 +1021,7 @@ const MenuPage = () => {
 
         {/* 2. BARRA DE BÚSQUEDA Y FILTROS (SOLO SI HAY PDFs) */}
         {pdfContent.length > 0 && (
-          <div className="mb-8 bg-white/60 backdrop-blur-lg rounded-2xl p-6 shadow-lg border border-gray-200/50 animate-fade-in" style={{ animationDelay: '300ms' }}>
+          <div className="mb-8 bg-white border border-gray-300 p-6 shadow-sm animate-fade-in" style={{ animationDelay: '300ms' }}>
             <div className="flex flex-col lg:flex-row gap-4 items-center justify-between">
               <div className="relative flex-1 max-w-md w-full">
                 <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
@@ -1030,7 +1030,7 @@ const MenuPage = () => {
                   placeholder="Buscar documentos PDF..."
                   value={searchTerm}
                   onChange={(e) => setSearchTerm(e.target.value)}
-                  className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300"
+                  className="w-full pl-10 pr-4 py-2 border border-gray-300 focus:ring-1 focus:ring-gray-500 focus:border-gray-500 transition-all duration-200"
                 />
               </div>
 
@@ -1042,8 +1042,8 @@ const MenuPage = () => {
                     size="sm"
                     onClick={() => setSelectedCategory(category)}
                     className={selectedCategory === category ? 
-                      "bg-blue-600 hover:bg-blue-700 transition-all duration-300" : 
-                      "hover:bg-blue-50 transition-all duration-300"
+                      "bg-gray-800 hover:bg-gray-900 text-white transition-all duration-200" : 
+                      "border-gray-300 hover:bg-gray-50 transition-all duration-200"
                     }
                   >
                     {category}
