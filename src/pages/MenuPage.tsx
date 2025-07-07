@@ -647,8 +647,8 @@ const MenuPage = () => {
     if (!item.videos || item.videos.length === 0) return null;
 
     return (
-      <div className="bg-white/70 backdrop-blur-lg rounded-2xl shadow-lg border border-gray-200/50 hover:shadow-xl transition-all duration-300 animate-fade-in-up h-full">
-        <div className="p-6 border-b border-gray-100">
+      <div className="bg-white border border-gray-300 shadow-sm hover:shadow-md transition-all duration-200 animate-fade-in-up h-full">
+        <div className="p-6 border-b border-gray-300">
           <h3 className="text-lg font-semibold text-gray-900 mb-2">
             {item.title}
           </h3>
@@ -845,8 +845,8 @@ const MenuPage = () => {
    * Renderiza contenido de tipo contenido HTML enriquecido
    */
   const renderContentType = (item: ContentItem) => (
-    <div className="bg-white/70 backdrop-blur-lg rounded-2xl shadow-lg border border-gray-200/50 hover:shadow-xl transition-all duration-300 animate-fade-in-up h-full">
-      <div className="p-6 border-b border-gray-100">
+    <div className="bg-white border border-gray-300 shadow-sm hover:shadow-md transition-all duration-200 animate-fade-in-up h-full">
+      <div className="p-6 border-b border-gray-300">
         <h3 className="text-lg font-semibold text-gray-900 mb-2">
           {item.title}
         </h3>

@@ -104,7 +104,7 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose }) => {
               return (
                 <button
                   key={index}
-                  className={`${social.color} text-white p-3 rounded-xl transition-all duration-200 hover:scale-105 flex items-center justify-center space-x-2`}
+                  className={`${social.color} text-white p-3 transition-all duration-200 hover:opacity-90 flex items-center justify-center space-x-2`}
                 >
                   <IconComponent />
                   <span className="text-sm font-medium">{social.name}</span>
@@ -122,11 +122,11 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose }) => {
           <h3 className="font-bold text-gray-900">Información Publicitaria</h3>
           <div className="space-y-3">
             {advertisements.map((ad) => (
-              <div key={ad.id} className="bg-white/60 border border-gray-200/40 rounded-xl p-3">
+              <div key={ad.id} className="bg-white border border-gray-300 p-3">
                 <img 
                   src={ad.imageUrl} 
                   alt={ad.title}
-                  className="w-full h-24 object-cover rounded-lg mb-2"
+                  className="w-full h-24 object-cover mb-2"
                 />
                 <h4 className="font-medium text-sm text-gray-900">{ad.title}</h4>
                 <p className="text-xs text-gray-600 mt-1">{ad.description}</p>
@@ -142,7 +142,7 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose }) => {
 
   const renderMainLevel = () => (
     <div className="space-y-2">
-      <div className="px-4 py-3 border-b border-gray-200/30">
+        <div className="px-4 py-3 border-b border-gray-300">
         <h2 className="text-lg font-bold text-gray-900">Menú Principal</h2>
       </div>
       <ScrollArea className="h-96">
@@ -153,7 +153,7 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose }) => {
               <button
                 key={item.key}
                 onClick={() => navigateToLevel(item.key, item.title)}
-                className={`flex items-center w-full text-left py-3 px-4 rounded-2xl font-medium transition-all duration-200 hover:bg-white/50 ${item.iconColor}`}
+                className={`flex items-center w-full text-left py-3 px-4 font-medium transition-all duration-200 hover:bg-gray-100 ${item.iconColor}`}
               >
                 {IconComponent && <IconComponent className="w-5 h-5 mr-3" />}
                 <span className="flex-1">{item.title}</span>
@@ -174,7 +174,7 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose }) => {
     
     return (
       <div className="space-y-2">
-        <div className="px-4 py-3 border-b border-gray-200/30">
+        <div className="px-4 py-3 border-b border-gray-300">
           <button
             onClick={goBack}
             className="flex items-center text-gray-600 hover:text-gray-900 transition-colors mb-2"
@@ -195,7 +195,7 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose }) => {
                   {item.children ? (
                     <button
                       onClick={() => navigateToLevel(item.key, item.title)}
-                      className="flex items-center w-full text-left py-3 px-4 rounded-2xl font-medium transition-all duration-200 hover:bg-white/50 text-gray-700 hover:text-gray-900"
+                      className="flex items-center w-full text-left py-3 px-4 font-medium transition-all duration-200 hover:bg-gray-100 text-gray-700 hover:text-gray-900"
                     >
                       {IconComponent && <IconComponent className="w-5 h-5 mr-3" />}
                       <span className="flex-1">{item.title}</span>
@@ -205,7 +205,7 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose }) => {
                     <Link
                       to={`/${currentLevel}/${item.key}`}
                       onClick={closeMenu}
-                      className="flex items-center w-full text-left py-3 px-4 rounded-2xl font-medium transition-all duration-200 hover:bg-white/50 text-gray-700 hover:text-gray-900"
+                      className="flex items-center w-full text-left py-3 px-4 font-medium transition-all duration-200 hover:bg-gray-100 text-gray-700 hover:text-gray-900"
                     >
                       {IconComponent && <IconComponent className="w-5 h-5 mr-3" />}
                       <span className="flex-1">{item.title}</span>
@@ -240,7 +240,7 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose }) => {
 
     return (
       <div className="space-y-2">
-        <div className="px-4 py-3 border-b border-gray-200/30">
+        <div className="px-4 py-3 border-b border-gray-300">
           <button
             onClick={goBack}
             className="flex items-center text-gray-600 hover:text-gray-900 transition-colors mb-2"
@@ -259,7 +259,7 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose }) => {
                   key={child.key}
                   to={`/${currentLevel}/${selectedSecondLevel}/${child.key}`}
                   onClick={closeMenu}
-                  className="flex items-center w-full text-left py-3 px-4 rounded-2xl font-medium transition-all duration-200 hover:bg-white/50 text-gray-700 hover:text-gray-900"
+                  className="flex items-center w-full text-left py-3 px-4 font-medium transition-all duration-200 hover:bg-gray-100 text-gray-700 hover:text-gray-900"
                 >
                   {IconComponent && <IconComponent className="w-4 h-4 mr-3" />}
                   <span className="flex-1">{child.title}</span>
@@ -283,20 +283,20 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose }) => {
       />
       
       {/* Panel del menú móvil */}
-      <div className="fixed top-0 right-0 h-full w-80 max-w-[85vw] bg-white/95 backdrop-blur-xl border-l border-gray-200/30 shadow-2xl z-50 lg:hidden transform transition-transform duration-300">
+      <div className="fixed top-0 right-0 h-full w-80 max-w-[85vw] bg-white border-l border-gray-300 shadow-lg z-50 lg:hidden transform transition-transform duration-300">
         <div className="flex flex-col h-full">
           {/* Header del menú móvil */}
-          <div className="p-4 border-b border-gray-200/30">
+          <div className="p-4 border-b border-gray-300">
             <div className="flex items-center justify-between">
               <div className="flex items-center">
-                <div className="w-8 h-8 bg-gradient-to-br from-blue-600 to-purple-600 rounded-xl flex items-center justify-center">
+                <div className="w-8 h-8 bg-gray-800 flex items-center justify-center">
                   <span className="text-white font-bold text-sm">C</span>
                 </div>
                 <span className="ml-2 font-bold text-gray-900">CGC</span>
               </div>
               <button
                 onClick={closeMenu}
-                className="p-2 rounded-xl hover:bg-gray-100/50 transition-colors"
+                className="p-2 hover:bg-gray-100 transition-colors"
                 aria-label="Cerrar menú"
               >
                 <ArrowLeft className="w-5 h-5" />
@@ -312,7 +312,7 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose }) => {
           </div>
 
           {/* Footer del menú móvil */}
-          <div className="p-4 border-t border-gray-200/30">
+          <div className="p-4 border-t border-gray-300">
             <div className="text-xs text-gray-500 text-center">
               Contraloría General de Cuentas
             </div>
