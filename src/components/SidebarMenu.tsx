@@ -222,13 +222,13 @@ const SidebarMenu = () => {
   if (!menuData) return null;
 
   return (
-    <div className="bg-white/90 backdrop-blur-xl rounded-2xl shadow-xl border border-gray-200/50 p-6 h-fit sticky top-8 transition-all duration-300">
+    <div className="bg-white rounded-lg shadow-lg border border-gray-200 p-6 h-fit sticky top-6 transition-all duration-300">
       {/* Header del menú */}
       <div className="mb-6 text-center">
-        <h2 className="text-2xl font-bold text-gray-900 mb-2 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent animate-fade-in-up">
+        <h2 className="text-xl font-bold text-primary mb-2 animate-fade-in-up">
           {menuData.title}
         </h2>
-        <div className="w-20 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto rounded-full mb-3 animate-fade-in-scale"></div>
+        <div className="w-20 h-1 bg-primary mx-auto rounded-full mb-3 animate-fade-in-scale"></div>
         <p className="text-sm text-gray-600 animate-fade-in-up" style={{ animationDelay: '200ms' }}>
           {menuData.subtitle}
         </p>
@@ -242,29 +242,25 @@ const SidebarMenu = () => {
             <Button
               key={item.id}
               variant="ghost"
-              className={`w-full justify-start text-left p-4 h-auto ${item.bgColor} 
-                transition-all duration-300 hover:scale-[1.02] hover:shadow-md rounded-xl
-                border border-transparent hover:border-gray-200/50
+              className={`w-full justify-start text-left p-3 h-auto ${item.bgColor} 
+                transition-all duration-300 hover:shadow-md border border-gray-200/30 hover:border-gray-300/50
                 ${isTransitioning ? 'opacity-50 pointer-events-none' : ''}
                 animate-fade-in-up relative overflow-hidden`}
               style={{ animationDelay: `${index * 100}ms` }}
               onClick={() => handleNavigation(item.route)}
               disabled={item.route === '/' || isTransitioning}
             >
-              {/* Efecto de slide en hover */}
-              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
-              
-              <div className="flex items-start space-x-4 w-full relative z-10">
-                <div className={`flex-shrink-0 p-2 rounded-lg bg-white/60 ${item.color} shadow-sm transition-all duration-300 hover:scale-110`}>
-                  <IconComponent className="w-5 h-5" />
+              <div className="flex items-start space-x-3 w-full relative z-10">
+                <div className={`flex-shrink-0 p-2 rounded bg-white shadow-sm ${item.color} transition-all duration-300`}>
+                  <IconComponent className="w-4 h-4" />
                 </div>
                 <div className="flex-1 min-w-0">
                   <div className="flex items-center justify-between">
-                    <span className="font-semibold text-gray-900 truncate text-sm">
+                    <span className="font-medium text-gray-900 truncate text-sm">
                       {item.title}
                     </span>
                     {item.route !== '/' && (
-                      <ChevronRight className="w-4 h-4 text-gray-400 ml-2 transition-transform group-hover:translate-x-1" />
+                      <ChevronRight className="w-4 h-4 text-gray-400 ml-2" />
                     )}
                   </div>
                   <p className="text-xs text-gray-600 mt-1 line-clamp-2">

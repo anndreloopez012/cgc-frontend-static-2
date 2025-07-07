@@ -32,23 +32,23 @@ const Index = () => {
   };
 
   return (
-    <div className="min-h-screen bg-white font-inter">
+    <div className="min-h-screen bg-background font-inter">
       <Header 
         showSidebarButton={true}
         onSidebarButtonClick={handleOpenSidebarDrawer}
       />
       
-      {/* Layout principal con sidebar y contenido */}
-      <div className="flex">
+      {/* Layout principal estilo gobierno */}
+      <div className="max-w-7xl mx-auto flex">
         {/* Menú lateral - Solo visible en desktop */}
         <aside className="hidden lg:block lg:w-80 xl:w-96 flex-shrink-0">
-          <div className="sticky top-0 h-screen overflow-y-auto p-6">
+          <div className="sticky top-6 p-6">
             <SidebarMenu />
           </div>
         </aside>
 
         {/* Contenido principal */}
-        <main className="flex-1 min-w-0">
+        <main className="flex-1 min-w-0 px-4 sm:px-6">
           {/* Contenido principal de la página con slider */}
           <HomeContent />
           

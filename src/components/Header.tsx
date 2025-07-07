@@ -69,26 +69,24 @@ const Header: React.FC<HeaderProps> = ({ showSidebarButton = false, onSidebarBut
 
   return (
     <>
-      {/* Contenedor flotante del header */}
-      <div className="fixed top-4 left-4 right-4 z-50">
-        <header className="bg-white/80 backdrop-blur-xl border border-gray-200/30 rounded-3xl shadow-2xl mx-auto max-w-7xl">
+      {/* Header estilo gobierno */}
+      <div className="w-full bg-primary z-50 relative">
+        <header className="max-w-7xl mx-auto">
           <div className="px-4 sm:px-6 lg:px-8">
-            <div className="flex justify-between items-center h-16">
-              {/* Logo mejorado */}
+            <div className="flex justify-between items-center h-20">
+              {/* Logo del gobierno */}
               <div className="flex-shrink-0">
                 <div className="flex items-center">
                   <div className="relative">
-                    {/* Logo principal con gradiente */}
-                    <div className="w-10 h-10 bg-gradient-to-br from-blue-600 via-purple-600 to-blue-800 rounded-2xl shadow-xl flex items-center justify-center transform rotate-3">
-                      <span className="text-white font-bold text-lg transform -rotate-3">C</span>
+                    {/* Logo principal estilo gobierno */}
+                    <div className="w-14 h-14 bg-white rounded-full shadow-lg flex items-center justify-center">
+                      <span className="text-primary font-bold text-xl">CGC</span>
                     </div>
-                    {/* Indicador decorativo */}
-                    <div className="absolute -top-2 -right-2 w-5 h-5 bg-gradient-to-br from-amber-400 to-orange-500 rounded-full border-2 border-white shadow-lg"></div>
                   </div>
                   {/* Texto del logo */}
-                  <div className="ml-3 hidden sm:block">
-                    <span className="text-xl sm:text-2xl font-bold bg-gradient-to-r from-blue-800 via-purple-700 to-blue-900 bg-clip-text text-transparent tracking-wide">CGC</span>
-                    <div className="text-xs text-gray-600 font-medium">Contraloría General</div>
+                  <div className="ml-4 hidden sm:block">
+                    <span className="text-xl sm:text-2xl font-bold text-white tracking-wide">Contraloría General de Cuentas</span>
+                    <div className="text-sm text-white/80 font-medium">Guatemala</div>
                   </div>
                 </div>
               </div>
@@ -103,11 +101,11 @@ const Header: React.FC<HeaderProps> = ({ showSidebarButton = false, onSidebarBut
                       className="relative"
                       onMouseEnter={() => handleMouseEnter(item.key)}
                     >
-                      <button className={`flex items-center px-3 xl:px-4 py-2 rounded-2xl font-medium transition-all duration-200 hover:bg-white/50 ${item.iconColor} text-sm xl:text-base`}>
+                      <button className="flex items-center px-4 py-3 font-medium transition-all duration-200 hover:bg-white/10 text-white text-sm border-r border-white/20 last:border-r-0">
                         {IconComponent && <IconComponent className="w-4 h-4 mr-2" />}
                         <span className="hidden xl:inline">{item.title}</span>
-                        <span className="xl:hidden">{item.title.slice(0, 3)}</span>
-                        <ChevronDown className="w-4 h-4 ml-1" />
+                        <span className="xl:hidden">{item.title.slice(0, 8)}</span>
+                        <ChevronDown className="w-4 h-4 ml-2" />
                       </button>
                     </div>
                   );
@@ -120,7 +118,7 @@ const Header: React.FC<HeaderProps> = ({ showSidebarButton = false, onSidebarBut
                 {showSidebarButton && (
                   <Button
                     onClick={onSidebarButtonClick}
-                    className="lg:hidden bg-gradient-to-br from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
+                    className="lg:hidden bg-white text-primary hover:bg-gray-100 shadow-lg transition-all duration-300"
                     size="sm"
                     aria-label="Abrir menú de servicios"
                   >
@@ -135,7 +133,7 @@ const Header: React.FC<HeaderProps> = ({ showSidebarButton = false, onSidebarBut
                     variant="ghost"
                     size="sm"
                     onClick={toggleMobileMenu}
-                    className="rounded-2xl"
+                    className="text-white hover:bg-white/10"
                     aria-label="Toggle mobile menu"
                   >
                     {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -147,12 +145,9 @@ const Header: React.FC<HeaderProps> = ({ showSidebarButton = false, onSidebarBut
         </header>
       </div>
 
-      {/* Espaciador para el header fijo */}
-      <div className="h-24"></div>
-
       {/* Mega menú de escritorio - Pegado directamente al nav sin espacio */}
       <div 
-        className="fixed top-20 left-0 right-0 z-40"
+        className="absolute top-full left-0 right-0 z-40"
         onMouseEnter={() => setActiveMegaMenu(activeMegaMenu)}
         onMouseLeave={handleMouseLeave}
       >
