@@ -965,35 +965,47 @@ const MenuPage = () => {
   console.log('[MenuPage] Contenido PDF (ordenado):', filteredPdfContent.length);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 animate-fade-in">
-      {/* Header de la página con transición */}
-      <header className="bg-white/80 backdrop-blur-lg border-b border-gray-200/50 sticky top-0 z-40 animate-fade-in" style={{ animationDelay: '200ms' }}>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-          <div className="flex items-center justify-between">
-            <div className="flex items-center space-x-4">
-              <Button
-                variant="outline"
-                size="sm"
-                onClick={() => navigate('/')}
-                className="hover:bg-blue-50 transition-all duration-300 hover:scale-105"
-              >
-                <ArrowLeft className="w-4 h-4 mr-2" />
-                Volver al Inicio
-              </Button>
-              <div>
-                <h1 className="text-xl sm:text-2xl font-bold text-gray-900">
-                  {pageContent.title}
-                </h1>
-                <p className="text-sm text-gray-600 hidden sm:block">
-                  {pageContent.description}
-                </p>
+    <div className="min-h-screen bg-background">
+      {/* Header estilo gobierno */}
+      <div className="w-full bg-primary z-50 relative">
+        <header className="max-w-7xl mx-auto">
+          <div className="px-4 sm:px-6 lg:px-8">
+            <div className="flex justify-between items-center h-20">
+              {/* Logo del gobierno */}
+              <div className="flex-shrink-0">
+                <div className="flex items-center">
+                  <img 
+                    src="/lovable-uploads/be6267fe-c26a-4dd8-bdc3-95323c6a0fd7.png" 
+                    alt="CGC Logo" 
+                    className="h-16 w-auto object-contain"
+                  />
+                </div>
+              </div>
+
+              {/* Botón volver */}
+              <div className="flex items-center">
+                <Button
+                  onClick={() => navigate('/')}
+                  className="bg-white text-primary hover:bg-gray-100 shadow-lg transition-all duration-300"
+                  size="sm"
+                  aria-label="Volver al inicio"
+                >
+                  <ArrowLeft className="w-4 h-4 mr-2" />
+                  <span className="text-sm">Volver</span>
+                </Button>
               </div>
             </div>
           </div>
-        </div>
-      </header>
+        </header>
+      </div>
 
-      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      {/* Contenido de la página */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <div className="mb-8">
+          <h1 className="text-3xl font-bold text-gray-900 mb-4">{pageContent.title}</h1>
+          <p className="text-gray-600 max-w-4xl">{pageContent.description}</p>
+        </div>
+
         {/* 1. CONTENIDO NO-PDF PRIMERO (ORDENADO POR 'order') */}
         {filteredNonPdfContent.length > 0 && (
           <div className="mb-12 animate-fade-in" style={{ animationDelay: '400ms' }}>
@@ -1075,7 +1087,7 @@ const MenuPage = () => {
             </p>
           </div>
         )}
-      </main>
+      </div>
 
       {/* Visualizador de PDF */}
       {selectedPDF && (

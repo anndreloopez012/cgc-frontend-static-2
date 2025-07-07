@@ -123,16 +123,16 @@ const BentoMegaMenu: React.FC<BentoMegaMenuProps> = ({
         return (
           <div 
             key={index} 
-            className={`${item.color} border rounded-2xl p-6 cursor-pointer hover:shadow-lg transition-all duration-200 hover:scale-[1.02] group backdrop-blur-sm`}
+            className="bg-white border border-gray-200 rounded-lg p-6 cursor-pointer hover:shadow-lg transition-all duration-200 hover:scale-[1.02] group hover:border-primary/30"
             onClick={() => handleItemClick(item.key)}
           >
             <div className="flex items-start justify-between mb-4">
-              <div className={`w-12 h-12 rounded-xl ${item.color} border flex items-center justify-center backdrop-blur-sm`}>
-                {IconComponent && <IconComponent className={`w-6 h-6 ${item.iconColor}`} />}
+              <div className="w-12 h-12 rounded-lg bg-primary/10 border border-primary/20 flex items-center justify-center">
+                {IconComponent && <IconComponent className="w-6 h-6 text-primary" />}
               </div>
               <ArrowRight className="w-5 h-5 text-gray-400 opacity-0 group-hover:opacity-100 transition-opacity" />
             </div>
-            <h3 className="text-lg font-semibold text-gray-900 mb-2">{item.title}</h3>
+            <h3 className="text-lg font-semibold text-gray-900 mb-2 group-hover:text-primary transition-colors">{item.title}</h3>
             <p className="text-sm text-gray-600">{item.description}</p>
           </div>
         );
@@ -156,7 +156,7 @@ const BentoMegaMenu: React.FC<BentoMegaMenuProps> = ({
           <h3 className="text-lg font-bold text-gray-900">Conecta</h3>
           
           {/* Redes Sociales */}
-          <div className="bg-white/40 border border-gray-200/40 rounded-2xl p-4">
+          <div className="bg-gray-50 border border-gray-200 rounded-lg p-4">
             <h4 className="text-sm font-bold text-gray-900 mb-3">Síguenos</h4>
             <div className="grid grid-cols-2 gap-2">
               {socialMedia.map((social, index) => {
@@ -164,7 +164,7 @@ const BentoMegaMenu: React.FC<BentoMegaMenuProps> = ({
                 return (
                   <button
                     key={index}
-                    className={`${social.color} text-white p-3 rounded-xl transition-all duration-200 hover:scale-110 shadow-md flex items-center justify-center`}
+                    className="bg-primary text-white p-3 rounded-lg transition-all duration-200 hover:scale-110 shadow-md flex items-center justify-center hover:bg-primary/90"
                     aria-label={`Seguir en ${social.name}`}
                   >
                     <IconComponent />
@@ -175,18 +175,18 @@ const BentoMegaMenu: React.FC<BentoMegaMenuProps> = ({
           </div>
 
           {/* Galería de Imágenes */}
-          <div className="bg-white/40 border border-gray-200/40 rounded-2xl p-4">
+          <div className="bg-gray-50 border border-gray-200 rounded-lg p-4">
             <h4 className="text-sm font-bold text-gray-900 mb-3">Galería</h4>
             <div className="relative">
               <Carousel className="w-full">
                 <CarouselContent>
                   {carouselImages.map((image, index) => (
                     <CarouselItem key={image.id} className="basis-full">
-                      <div className="bg-white/40 rounded-xl p-1">
+                      <div className="bg-white border border-gray-100 rounded-lg p-1">
                         <img
                           src={image.url}
                           alt={image.title}
-                          className="w-full h-24 object-cover rounded-lg"
+                          className="w-full h-24 object-cover rounded-md"
                         />
                         <p className="text-xs text-center mt-1 text-gray-700">{image.title}</p>
                       </div>
@@ -211,15 +211,15 @@ const BentoMegaMenu: React.FC<BentoMegaMenuProps> = ({
                 return (
                   <div 
                     key={index}
-                    className={`p-4 rounded-xl cursor-pointer transition-all duration-200 border ${
+                    className={`p-4 rounded-lg cursor-pointer transition-all duration-200 border ${
                       selectedSecondLevel === item.key 
-                        ? 'bg-blue-50/80 border-blue-200/60 shadow-md transform scale-[1.02]' 
-                        : 'bg-white/40 border-gray-200/40 hover:bg-white/60 hover:shadow-md hover:scale-[1.01]'
+                        ? 'bg-primary/10 border-primary/30 shadow-md transform scale-[1.02]' 
+                        : 'bg-white border-gray-200 hover:bg-gray-50 hover:shadow-md hover:scale-[1.01] hover:border-primary/20'
                     }`}
                     onClick={() => item.children ? handleItemClick(item.key, item.title) : handleItemClick(item.key)}
                   >
                     <div className="flex items-center space-x-3">
-                      <div className="w-10 h-10 bg-gray-100/60 rounded-lg flex items-center justify-center flex-shrink-0 backdrop-blur-sm">
+                      <div className="w-10 h-10 bg-gray-100 rounded-lg flex items-center justify-center flex-shrink-0">
                         {IconComponent && <IconComponent className="w-5 h-5 text-gray-600" />}
                       </div>
                       <div className="flex-1 min-w-0">
@@ -245,7 +245,7 @@ const BentoMegaMenu: React.FC<BentoMegaMenuProps> = ({
 
         {/* Columna 3: Opciones de Tercer Nivel */}
         {selectedItem && selectedItem.children && (
-          <div className={`space-y-4 border-l border-gray-200/40 pl-6 transition-all duration-300 ${
+          <div className={`space-y-4 border-l border-gray-200 pl-6 transition-all duration-300 ${
             isTransitioning ? 'opacity-0 transform translate-x-4' : 'opacity-100 transform translate-x-0'
           }`}>
             <div className="flex items-center space-x-4">
@@ -267,11 +267,11 @@ const BentoMegaMenu: React.FC<BentoMegaMenuProps> = ({
                   return (
                     <div 
                       key={index}
-                      className="bg-white/40 border border-gray-200/40 rounded-xl p-4 cursor-pointer hover:shadow-md hover:bg-white/60 transition-all duration-200 hover:scale-[1.01]"
+                      className="bg-white border border-gray-200 rounded-lg p-4 cursor-pointer hover:shadow-md hover:bg-gray-50 transition-all duration-200 hover:scale-[1.01] hover:border-primary/20"
                       onClick={() => handleThirdLevelClick(selectedItem.key, child.key)}
                     >
                       <div className="flex items-center space-x-3">
-                        <div className="w-8 h-8 bg-gray-100/60 rounded-lg flex items-center justify-center flex-shrink-0 backdrop-blur-sm">
+                        <div className="w-8 h-8 bg-gray-100 rounded-lg flex items-center justify-center flex-shrink-0">
                           {IconComponent && <IconComponent className="w-4 h-4 text-gray-600" />}
                         </div>
                         <h4 className="font-medium text-gray-900">
@@ -304,16 +304,16 @@ const BentoMegaMenu: React.FC<BentoMegaMenuProps> = ({
 
   return (
     <div 
-      className="fixed top-28 left-4 right-4 z-40"
+      className="fixed top-20 left-0 right-0 z-40"
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
     >
-      <div className="absolute inset-0 bg-black/5 backdrop-blur-[1px]"></div>
+      <div className="absolute inset-0 bg-black/10 backdrop-blur-sm"></div>
       
       <div className="relative mx-auto transition-all duration-500 ease-out" style={{
         maxWidth: getMaxWidth()
       }}>
-        <div className={`bg-white/10 backdrop-blur-3xl border border-white/20 rounded-3xl shadow-2xl p-6 lg:p-8 transition-all duration-500 min-h-[400px] ${
+        <div className={`bg-white border border-gray-200 shadow-xl mx-4 lg:mx-8 rounded-lg p-6 lg:p-8 transition-all duration-500 min-h-[400px] ${
           isTransitioning ? 'opacity-50 scale-95' : 'opacity-100 scale-100'
         }`}>
           {activeLevel === 'main' 

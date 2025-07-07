@@ -51,9 +51,6 @@ const Index = () => {
         <main className="flex-1 min-w-0 px-4 sm:px-6">
           {/* Contenido principal de la página con slider */}
           <HomeContent />
-          
-          {/* Sección de redes sociales */}
-          <SocialMediaSection />
         </main>
       </div>
 
