@@ -747,7 +747,7 @@ const MenuPage = () => {
                 onClick={() => openVideoModal(item.id, 0)}
                 variant="ghost"
                 size="icon"
-                className="absolute top-2 right-2 bg-black/20 backdrop-blur-sm hover:bg-black/30 text-white rounded-full opacity-0 group-hover:opacity-100 transition-all duration-300"
+                className="absolute top-2 right-2 bg-black/20 backdrop-blur-sm hover:bg-black/30 text-white opacity-0 group-hover:opacity-100 transition-all duration-300"
               >
                 <Maximize className="w-4 h-4" />
               </Button>
