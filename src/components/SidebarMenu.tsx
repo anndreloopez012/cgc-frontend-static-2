@@ -68,83 +68,83 @@ const SidebarMenu = () => {
           version: "1.1",
           lastUpdated: "2024-12-27",
           menuItems: [
-            {
-              id: 1,
-              title: "Estado de Cuenta",
-              route: "/estado-cuenta",
-              icon: "FileText",
-              description: "Consulta el estado de tu cuenta y movimientos",
-              color: "text-blue-600",
-              bgColor: "bg-blue-50 hover:bg-blue-100",
-              priority: 1,
-              active: true
-            },
-            {
-              id: 2,
-              title: "Solicitud de Finiquito",
-              route: "/solicitud-finiquito",
-              icon: "FileText",
-              description: "Realiza tu solicitud de finiquito en línea",
-              color: "text-green-600",
-              bgColor: "bg-green-50 hover:bg-green-100",
-              priority: 2,
-              active: true
-            },
-            {
-              id: 3,
-              title: "Comunicaciones Electrónicas",
-              route: "/comunicaciones-electronicas",
-              icon: "Mail",
-              description: "Gestiona tus comunicaciones electrónicas",
-              color: "text-purple-600",
-              bgColor: "bg-purple-50 hover:bg-purple-100",
-              priority: 3,
-              active: true
-            },
-            {
-              id: 4,
-              title: "Registro de títulos",
-              route: "/registro-titulos",
-              icon: "Book",
-              description: "Registra y consulta títulos académicos",
-              color: "text-orange-600",
-              bgColor: "bg-orange-50 hover:bg-orange-100",
-              priority: 4,
-              active: true
-            },
-            {
-              id: 5,
-              title: "Actualización de Datos",
-              route: "/actualizacion-datos",
-              icon: "RefreshCcw",
-              description: "Actualiza tu información personal",
-              color: "text-indigo-600",
-              bgColor: "bg-indigo-50 hover:bg-indigo-100",
-              priority: 5,
-              active: true
-            },
-            {
-              id: 6,
-              title: "Declaración Jurada Patrimonial",
-              route: "/declaracion-patrimonial",
-              icon: "FileText",
-              description: "Presenta tu declaración jurada patrimonial",
-              color: "text-teal-600",
-              bgColor: "bg-teal-50 hover:bg-teal-100",
-              priority: 6,
-              active: true
-            },
-            {
-              id: 7,
-              title: "Manuales y Procedimientos",
-              route: "/manuales-procedimientos",
-              icon: "Book",
-              description: "Consulta manuales y procedimientos en PDF",
-              color: "text-red-600",
-              bgColor: "bg-red-50 hover:bg-red-100",
-              priority: 7,
-              active: true
-            }
+              {
+                id: 1,
+                title: "Estado de Cuenta",
+                route: "/estado-cuenta",
+                icon: "FileText",
+                description: "Consulta el estado de tu cuenta y movimientos",
+                color: "text-primary",
+                bgColor: "bg-primary/5 hover:bg-primary/10 border-primary/20",
+                priority: 1,
+                active: true
+              },
+              {
+                id: 2,
+                title: "Solicitud de Finiquito",
+                route: "/solicitud-finiquito",
+                icon: "FileText",
+                description: "Realiza tu solicitud de finiquito en línea",
+                color: "text-primary",
+                bgColor: "bg-primary/5 hover:bg-primary/10 border-primary/20",
+                priority: 2,
+                active: true
+              },
+              {
+                id: 3,
+                title: "Comunicaciones Electrónicas",
+                route: "/comunicaciones-electronicas",
+                icon: "Mail",
+                description: "Gestiona tus comunicaciones electrónicas",
+                color: "text-primary",
+                bgColor: "bg-primary/5 hover:bg-primary/10 border-primary/20",
+                priority: 3,
+                active: true
+              },
+              {
+                id: 4,
+                title: "Registro de títulos",
+                route: "/registro-titulos",
+                icon: "Book",
+                description: "Registra y consulta títulos académicos",
+                color: "text-primary",
+                bgColor: "bg-primary/5 hover:bg-primary/10 border-primary/20",
+                priority: 4,
+                active: true
+              },
+              {
+                id: 5,
+                title: "Actualización de Datos",
+                route: "/actualizacion-datos",
+                icon: "RefreshCcw",
+                description: "Actualiza tu información personal",
+                color: "text-primary",
+                bgColor: "bg-primary/5 hover:bg-primary/10 border-primary/20",
+                priority: 5,
+                active: true
+              },
+              {
+                id: 6,
+                title: "Declaración Jurada Patrimonial",
+                route: "/declaracion-patrimonial",
+                icon: "FileText",
+                description: "Presenta tu declaración jurada patrimonial",
+                color: "text-primary",
+                bgColor: "bg-primary/5 hover:bg-primary/10 border-primary/20",
+                priority: 6,
+                active: true
+              },
+              {
+                id: 7,
+                title: "Manuales y Procedimientos",
+                route: "/manuales-procedimientos",
+                icon: "Book",
+                description: "Consulta manuales y procedimientos en PDF",
+                color: "text-primary",
+                bgColor: "bg-primary/5 hover:bg-primary/10 border-primary/20",
+                priority: 7,
+                active: true
+              }
           ]
         });
       } finally {
@@ -243,7 +243,7 @@ const SidebarMenu = () => {
               key={item.id}
               variant="ghost"
               className={`w-full justify-start text-left p-3 h-auto ${item.bgColor} 
-                transition-all duration-300 hover:shadow-md border border-gray-200/30 hover:border-gray-300/50
+                transition-all duration-300 hover:shadow-md border hover:border-primary/30
                 ${isTransitioning ? 'opacity-50 pointer-events-none' : ''}
                 animate-fade-in-up relative overflow-hidden`}
               style={{ animationDelay: `${index * 100}ms` }}
@@ -251,7 +251,7 @@ const SidebarMenu = () => {
               disabled={item.route === '/' || isTransitioning}
             >
               <div className="flex items-start space-x-3 w-full relative z-10">
-                <div className={`flex-shrink-0 p-2 rounded bg-white shadow-sm ${item.color} transition-all duration-300`}>
+                <div className={`flex-shrink-0 p-2 rounded bg-primary/10 shadow-sm ${item.color} transition-all duration-300`}>
                   <IconComponent className="w-4 h-4" />
                 </div>
                 <div className="flex-1 min-w-0">
